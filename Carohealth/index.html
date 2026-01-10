@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Healthcare Discharge Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Healthcare Discharge Assistant</h1>
+  <p class="subtitle">Simple • Safe • Supportive</p>
+</header>
+
+<section class="settings">
+  <h2>App Settings</h2>
+
+  <label>Language</label>
+  <select id="language">
+    <option value="en">English</option>
+    <option value="ta">Tamil</option>
+  </select>
+
+  <label>
+    <input type="checkbox" id="notifications">
+    Enable Care Notifications
+  </label>
+</section>
+
+<section class="input-section">
+  <h2>Patient Input</h2>
+
+  <textarea id="dischargeText" placeholder="Enter discharge instructions or symptoms"></textarea>
+
+  <input type="text" id="medicineName" placeholder="Tablet name (e.g., Paracetamol)">
+
+  <input type="number" id="weight" placeholder="Weight (kg)">
+  <input type="number" id="height" placeholder="Height (cm)">
+
+  <button onclick="analyzeHealth()">Analyze Health</button>
+</section>
+
+<section id="resultSection" class="hidden">
+  <h2>Health Analysis</h2>
+
+  <div id="healthCard">
+    <h3 id="healthStatus"></h3>
+    <p id="healthSummary"></p>
+  </div>
+
+  <div class="box">
+    <h3>Daily Care Guidance</h3>
+    <ul id="dailyCareList"></ul>
+  </div>
+
+  <div class="box">
+    <h3>Tablet Explanation</h3>
+    <p id="tabletInfo"></p>
+  </div>
+
+  <div class="box">
+    <h3>Progress Tracking</h3>
+    <p id="progressInfo"></p>
+  </div>
+
+  <div class="box">
+    <h3>Nearby Healthcare Units</h3>
+    <p>Visit the nearest hospital or clinic if symptoms worsen.</p>
+  </div>
+
+  <button onclick="saveOffline()">Save for Offline Reading</button>
+</section>
+
+<footer>
+  <p class="disclaimer">
+    ⚠️ This is NOT a medical diagnosis. Always consult a qualified healthcare professional.
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
